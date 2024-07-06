@@ -256,7 +256,7 @@ class HomeScreenContent extends StatelessWidget {
              ).animate().slideY(curve: Curves.easeInOut,begin:1.5,end: 0,duration: 800.ms),
            ),
             SizedBox(height: 3.h,),
-            Container(
+            SizedBox(
               height: 30.h,
               width: double.infinity,
               child: BarChart(
@@ -268,7 +268,7 @@ class HomeScreenContent extends StatelessWidget {
                     ],
 
                     ),
-                    BarChartGroupData(x: 0,
+                    BarChartGroupData(x: 1,
                       barRods: [
                         BarChartRodData(toY: 3000,color: Colors.redAccent,),
                       ],
