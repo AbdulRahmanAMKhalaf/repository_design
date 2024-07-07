@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:repository_design/screens/home_screen/widgets/bar_indecators_widget.dart';
-import 'package:repository_design/screens/home_screen/widgets/earning_widget.dart';
-import 'package:repository_design/screens/home_screen/widgets/pie_indecators_widget.dart';
-import 'package:repository_design/screens/home_screen/widgets/progress_child_widget.dart';
-import 'package:repository_design/screens/home_screen/widgets/spending_widget.dart';
+import 'package:repository_design/presentation/screens/home_screen/widgets/bar_indecators_widget.dart';
+import 'package:repository_design/presentation/screens/home_screen/widgets/earning_widget.dart';
+import 'package:repository_design/presentation/screens/home_screen/widgets/pie_indecators_widget.dart';
+import 'package:repository_design/presentation/screens/home_screen/widgets/progress_child_widget.dart';
+import 'package:repository_design/presentation/screens/home_screen/widgets/spending_widget.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class HomeScreenContent extends StatelessWidget {

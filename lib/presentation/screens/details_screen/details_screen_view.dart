@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:repository_design/models/order_type_model.dart';
-import 'package:repository_design/screens/details_screen/details_screen_content.dart';
+import 'package:repository_design/presentation/screens/details_screen/details_screen_content.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class DetailsScreenView extends StatefulWidget {

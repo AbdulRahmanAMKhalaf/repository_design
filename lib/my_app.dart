@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:repository_design/screens/home_screen/home_screen_view.dart';
+import 'package:repository_design/presentation/screens/home_screen/home_screen_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MyApp extends StatelessWidget {

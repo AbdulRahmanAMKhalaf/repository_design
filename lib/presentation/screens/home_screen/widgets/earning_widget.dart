@@ -8,7 +8,7 @@ class EarningWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 17.h,
-      width: 45.w,
+      width: 46.w,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.px),
@@ -31,7 +31,6 @@ class EarningWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Icon(Icons.monetization_on_outlined,color: Colors.black87,size: 30.px,),
-                SizedBox(width: 1.w,),
                 Text('Earnings',
                   style: TextStyle(
                     color: Colors.cyan,
@@ -59,13 +58,13 @@ class EarningWidget extends StatelessWidget {
                         text: '20%',
                         style: TextStyle(
                             color: Colors.greenAccent.shade400,
-                            fontSize: 15.px,
+                            fontSize: 10.px,
                             fontWeight: FontWeight.w600
                         )
                     ),
                   ],
                 )),
-                SizedBox(width: 2.w,),
+                SizedBox(width: 1.w,),
                 Container(
                   height: 2.5.h,
                   width: 5.w,
@@ -81,7 +80,7 @@ class EarningWidget extends StatelessWidget {
               style: TextStyle(
                   color: Colors.greenAccent.shade400,
                   fontWeight: FontWeight.w600,
-                  fontSize: 14.px
+                  fontSize: 11.px
               ),
             ),
           ],
