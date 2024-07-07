@@ -48,13 +48,13 @@ class ProgressChildWidget extends StatelessWidget {
                           text: '17%',
                           style: TextStyle(
                               color: Colors.greenAccent.shade400,
-                              fontSize: 15.px,
+                              fontSize: 12.px,
                               fontWeight: FontWeight.w600
                           )
                       ),
                     ],
                   )),
-                  SizedBox(width: 2.w,),
+                  SizedBox(width: 1.w,),
                   Container(
                     height: 2.5.h,
                     width: 5.w,
@@ -70,12 +70,12 @@ class ProgressChildWidget extends StatelessWidget {
                 style: TextStyle(
                     color: Colors.greenAccent.shade400,
                     fontWeight: FontWeight.w600,
-                    fontSize: 14.px
+                    fontSize: 13.px
                 ),
               ),
             ],
           ),
-          SizedBox(width: 10.w,),
+          const Spacer(),
           Container(
             width: 45.w,
             height: 15.h,

@@ -11,7 +11,7 @@ class DetailsScreenContent extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(20.px)),
       ),
       child: TabBarView(
@@ -22,12 +22,12 @@ class DetailsScreenContent extends StatelessWidget {
           children: [
             DropdownButton<String>(
               borderRadius: BorderRadius.all(Radius.circular(15.px),),
-              dropdownColor: Colors.yellow.shade400,
+              dropdownColor: Colors.grey.shade200,
               padding: EdgeInsets.all(5.px),
               menuMaxHeight: 100,
               hint: Text('Select Day,Week,...',
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 20.px,
                 fontWeight: FontWeight.w800
               ),
@@ -81,9 +81,10 @@ class DetailsScreenContent extends StatelessWidget {
               onChanged: (Object? value) {  },),
             SizedBox(height: 2.h,),
             Container(
+              margin: EdgeInsets.symmetric(horizontal: 3.w),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.px),
-                color: Colors.white,
+                color: Colors.cyanAccent.shade400,
               ),
               width: double.infinity,
               height: 32.h,
@@ -178,7 +179,7 @@ class DetailsScreenContent extends StatelessWidget {
                     centerSpaceRadius: 90,
                   )
               ),
-            ).animate().flipV(begin: 1,end: 0,duration: 600.ms),
+            ).animate().slideY(begin: 1,end: 0,duration: 1000.ms),
           ],
         ),
           ListView(
