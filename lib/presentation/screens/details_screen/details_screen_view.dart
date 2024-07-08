@@ -31,7 +31,7 @@ class _DetailsScreenViewState extends State<DetailsScreenView> with TickerProvid
           isScrollable: true,
           controller: tabController,
             labelStyle: TextStyle(
-              color: Colors.white,
+              color:Colors.white,
               fontSize: 25.px,
               fontWeight: FontWeight.w700
             ),
