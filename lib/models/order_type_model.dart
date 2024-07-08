@@ -18,7 +18,7 @@ List<String>iconsList=[
 ];
 List<DropdownMenuItem<String>>dropDownMenuList= [
   DropdownMenuItem(
-    value: '1',
+    value: '0',
     child:Text('Day',
       style: TextStyle(
         fontSize: 20.px,
@@ -29,7 +29,7 @@ List<DropdownMenuItem<String>>dropDownMenuList= [
     ),
   ),
   DropdownMenuItem(
-    value: '2',
+    value: '1',
     child:Text('Week',
       style: TextStyle(
         fontSize: 20.px,
@@ -40,7 +40,7 @@ List<DropdownMenuItem<String>>dropDownMenuList= [
     ),
   ),
   DropdownMenuItem(
-    value: '3',
+    value: '2',
     child:Text('Month',
       style: TextStyle(
         fontSize: 20.px,
@@ -51,7 +51,7 @@ List<DropdownMenuItem<String>>dropDownMenuList= [
     ),
   ),
   DropdownMenuItem(
-    value: '4',
+    value: '3',
     child:Text('Year',
       style: TextStyle(
         fontSize: 20.px,

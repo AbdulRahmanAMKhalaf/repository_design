@@ -1,7 +1,8 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:repository_design/models/order_type_model.dart';
+import 'package:repository_design/presentation/screens/details_screen/widgets/item_details_widget.dart';
+import 'package:repository_design/presentation/screens/details_screen/widgets/pie_chart_widget.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class DetailsScreenContent extends StatelessWidget {
@@ -46,65 +47,130 @@ class DetailsScreenContent extends StatelessWidget {
                   ),
                   width: double.infinity,
                   child: ListView.separated(
-                    padding: EdgeInsets.all(8.px),
-                      itemBuilder: (context, index) => Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              CircleAvatar(
-                                backgroundColor: Colors.redAccent,
-                                minRadius: 25.px,
-                                maxRadius: 30.px,
-                              ),
-                              SizedBox(width: 2.w,),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('Full name',
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 18.px,
-                                    fontWeight: FontWeight.w800
+                    padding: EdgeInsets.all(2.px),
+                      itemBuilder: (context, index) => InkWell(
+                        onTap: () {
+                          showDialog(context: context,
+                              builder: (context) => Center(
+                                child: Container(
+                                  height: 60.h,
+                                  margin: EdgeInsets.all(3.w),
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15.px,),
+                                    color: Colors.white
                                   ),
-                                  ),
-                                  SizedBox(height: 0.5.h,),
-                                  Text('Estimated Time: 5 min',
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 13.px,
-                                        fontWeight: FontWeight.w800
+                                  child: Padding(
+                                    padding:  EdgeInsets.all(2.0.w),
+                                    child: Stack(
+                                      children: [
+                                        Align(
+                                          alignment:Alignment.bottomCenter,
+                                          child: Container(
+                                            height: 52.h,
+                                            width: double.infinity,
+                                            decoration: BoxDecoration(
+                                              border: Border.all(color: Colors.black,
+                                              width: 1.w
+                                              ),
+                                              color: Colors.cyanAccent.shade400,
+                                              borderRadius: BorderRadius.all( Radius.circular(15.px),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.symmetric(horizontal: 3.0.w),
+                                          child: Column(
+                                            children: [
+                                              CircleAvatar(
+                                                minRadius: 50.px,
+                                                maxRadius: 60.px,
+                                                backgroundColor: Colors.black,
+
+                                              ),
+                                              SizedBox(height: 1.h,),
+                                              Text('#Order: 3',
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 20.px,
+                                                    decoration: TextDecoration.underline,
+                                                    fontWeight: FontWeight.w800
+                                                ),
+                                              ),
+                                              SizedBox(height: 1.h,),
+                                              Text('Carlos Darras Carlos Darras Carlos Darras Carlos Darras Carlos Darras Carlos Darras',
+                                              textAlign: TextAlign.center,
+                                                maxLines: 2,
+                                                overflow: TextOverflow.fade,
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.w800,
+                                                  fontSize: 20.px,
+                                                ),
+                                              ),
+                                              SizedBox(height: 2.h,),
+                                             RichText(
+                                               overflow: TextOverflow.ellipsis,
+                                                 maxLines: 5,
+                                                 text: TextSpan(
+                                                   children: [
+                                                     TextSpan(
+                                                       text: 'Description: ',
+                                                       style: TextStyle(
+                                                         fontSize: 19.px,
+                                                         fontWeight: FontWeight.w800,
+                                                         color: Colors.grey.shade800,
+                                                       )
+                                                     ),
+                                                     TextSpan(
+                                                       text: 'datadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadatadata',
+                                                       style: TextStyle(color: Colors.grey.shade700,
+                                                       fontWeight: FontWeight.w700,
+                                                       fontSize: 17.px)
+                                                     ),
+                                                   ],
+                                                 ),),
+                                              SizedBox(height: 3.h,),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                children: [
+                                                  Text('Estimated Time: 12.00A.M',
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.w900,
+                                                    fontSize: 13.px,
+                                                  ),
+                                                  ),
+                                                  Text('To: Carlos Darras',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight: FontWeight.w800,
+                                                      fontSize: 16.px,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(height: 4.h,),
+                                              Text('Profit Percentag: 30%',
+                                              style:TextStyle(
+                                                fontSize: 25.px,
+                                                fontWeight: FontWeight.w800,
+                                                color: Colors.grey.shade500
+                                              ) ,
+                                              ).animate(onPlay: (controller) => controller.repeat(),).shimmer(color: Colors.white,duration: 1200.ms,delay: 500.ms),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                ],
+                                ),
                               ),
-                              const Spacer(),
-                              Text('To:- Carlos Darras',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w800,
-                                fontSize: 15.px,
-                                color: Colors.black
-                              ),
-                              ),
-                            ],
-                          ),
-                          Align(
-                            alignment: Alignment.bottomRight,
-                            child: Text('NumberOfItem : 4',
-                            style:
-                              TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w800,
-                                fontSize: 15.px
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                            barrierDismissible: true
+                          );
+                        },
+                          child: const ItemDetailsWidget()),
                       separatorBuilder: (context, index) => SizedBox(height: 1.h,),
                       itemCount: 9),
                 ),
@@ -116,66 +182,7 @@ class DetailsScreenContent extends StatelessWidget {
                     barrierDismissible: true,
                       context: context,
                       builder: (context) {
-                        return  Center(
-                          child: Container(
-                            margin: EdgeInsets.all(10.w),
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              borderRadius: BorderRadius.circular(20.px),
-                            ),
-                            child:  Container(
-                              height: 20.h,
-                              width: 40.w,
-                              color: Colors.transparent,
-                              child: PieChart(
-                                  PieChartData(
-                                    sections: [
-                                      PieChartSectionData(
-                                          color: Colors.red,
-                                          title: 'A',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 40,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 3
-                                      ),
-                                      PieChartSectionData(
-                                          color: Colors.blue,
-                                          title: 'B',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 50,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 6
-                                      ),
-                                      PieChartSectionData(
-                                          color: Colors.greenAccent,
-                                          title: 'C',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 60,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 10
-                                      ),
-                                    ],
-                                    sectionsSpace: 10,
-                                    centerSpaceColor: Colors.cyan.shade200,
-                                    centerSpaceRadius: 90,
-                                  )
-                              ),
-                            ).animate().slideY(begin: -1,end: 0,duration: 600.ms).fadeIn(duration: 1000.ms,),
-                          ),
-                        );
+                        return const PieChartWidget();
                       },);
                 },
                 child: Container(
@@ -228,65 +235,8 @@ class DetailsScreenContent extends StatelessWidget {
                     ),
                     width: double.infinity,
                     child: ListView.separated(
-                        padding: EdgeInsets.all(8.px),
-                        itemBuilder: (context, index) => Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                CircleAvatar(
-                                  backgroundColor: Colors.redAccent,
-                                  minRadius: 25.px,
-                                  maxRadius: 30.px,
-                                ),
-                                SizedBox(width: 2.w,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text('Full name',
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18.px,
-                                          fontWeight: FontWeight.w800
-                                      ),
-                                    ),
-                                    SizedBox(height: 0.5.h,),
-                                    Text('Estimated Time: 5 min',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13.px,
-                                          fontWeight: FontWeight.w800
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const Spacer(),
-                                Text('To:- Carlos Darras',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w800,
-                                      fontSize: 15.px,
-                                      color: Colors.black
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Align(
-                              alignment: Alignment.bottomRight,
-                              child: Text('NumberOfItem : 4',
-                                style:
-                                TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 15.px
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        padding: EdgeInsets.all(2.px),
+                        itemBuilder: (context, index) => const ItemDetailsWidget(),
                         separatorBuilder: (context, index) => SizedBox(height: 1.h,),
                         itemCount: 9),
                   ),
@@ -298,66 +248,7 @@ class DetailsScreenContent extends StatelessWidget {
                       barrierDismissible: true,
                       context: context,
                       builder: (context) {
-                        return  Center(
-                          child: Container(
-                            margin: EdgeInsets.all(10.w),
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              borderRadius: BorderRadius.circular(20.px),
-                            ),
-                            child:  Container(
-                              height: 20.h,
-                              width: 40.w,
-                              color: Colors.transparent,
-                              child: PieChart(
-                                  PieChartData(
-                                    sections: [
-                                      PieChartSectionData(
-                                          color: Colors.red,
-                                          title: 'A',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 40,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 3
-                                      ),
-                                      PieChartSectionData(
-                                          color: Colors.blue,
-                                          title: 'B',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 50,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 6
-                                      ),
-                                      PieChartSectionData(
-                                          color: Colors.greenAccent,
-                                          title: 'C',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 60,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 10
-                                      ),
-                                    ],
-                                    sectionsSpace: 10,
-                                    centerSpaceColor: Colors.cyan.shade200,
-                                    centerSpaceRadius: 90,
-                                  )
-                              ),
-                            ).animate().slideY(begin: -1,end: 0,duration: 600.ms).fadeIn(duration: 1000.ms,),
-                          ),
-                        );
+                        return const PieChartWidget();
                       },);
                   },
                   child: Container(
@@ -410,65 +301,8 @@ class DetailsScreenContent extends StatelessWidget {
                     ),
                     width: double.infinity,
                     child: ListView.separated(
-                        padding: EdgeInsets.all(8.px),
-                        itemBuilder: (context, index) => Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                CircleAvatar(
-                                  backgroundColor: Colors.redAccent,
-                                  minRadius: 25.px,
-                                  maxRadius: 30.px,
-                                ),
-                                SizedBox(width: 2.w,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text('Full name',
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18.px,
-                                          fontWeight: FontWeight.w800
-                                      ),
-                                    ),
-                                    SizedBox(height: 0.5.h,),
-                                    Text('Estimated Time: 5 min',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13.px,
-                                          fontWeight: FontWeight.w800
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const Spacer(),
-                                Text('To:- Carlos Darras',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w800,
-                                      fontSize: 15.px,
-                                      color: Colors.black
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Align(
-                              alignment: Alignment.bottomRight,
-                              child: Text('NumberOfItem : 4',
-                                style:
-                                TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 15.px
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        padding: EdgeInsets.all(2.px),
+                        itemBuilder: (context, index) => const ItemDetailsWidget(),
                         separatorBuilder: (context, index) => SizedBox(height: 1.h,),
                         itemCount: 9),
                   ),
@@ -480,66 +314,7 @@ class DetailsScreenContent extends StatelessWidget {
                       barrierDismissible: true,
                       context: context,
                       builder: (context) {
-                        return  Center(
-                          child: Container(
-                            margin: EdgeInsets.all(10.w),
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              borderRadius: BorderRadius.circular(20.px),
-                            ),
-                            child:  Container(
-                              height: 20.h,
-                              width: 40.w,
-                              color: Colors.transparent,
-                              child: PieChart(
-                                  PieChartData(
-                                    sections: [
-                                      PieChartSectionData(
-                                          color: Colors.red,
-                                          title: 'A',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 40,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 3
-                                      ),
-                                      PieChartSectionData(
-                                          color: Colors.blue,
-                                          title: 'B',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 50,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 6
-                                      ),
-                                      PieChartSectionData(
-                                          color: Colors.greenAccent,
-                                          title: 'C',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 60,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 10
-                                      ),
-                                    ],
-                                    sectionsSpace: 10,
-                                    centerSpaceColor: Colors.cyan.shade200,
-                                    centerSpaceRadius: 90,
-                                  )
-                              ),
-                            ).animate().slideY(begin: -1,end: 0,duration: 600.ms).fadeIn(duration: 1000.ms,),
-                          ),
-                        );
+                        return const PieChartWidget();
                       },);
                   },
                   child: Container(
@@ -592,65 +367,8 @@ class DetailsScreenContent extends StatelessWidget {
                     ),
                     width: double.infinity,
                     child: ListView.separated(
-                        padding: EdgeInsets.all(8.px),
-                        itemBuilder: (context, index) => Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                CircleAvatar(
-                                  backgroundColor: Colors.redAccent,
-                                  minRadius: 25.px,
-                                  maxRadius: 30.px,
-                                ),
-                                SizedBox(width: 2.w,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text('Full name',
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18.px,
-                                          fontWeight: FontWeight.w800
-                                      ),
-                                    ),
-                                    SizedBox(height: 0.5.h,),
-                                    Text('Estimated Time: 5 min',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13.px,
-                                          fontWeight: FontWeight.w800
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const Spacer(),
-                                Text('To:- Carlos Darras',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w800,
-                                      fontSize: 15.px,
-                                      color: Colors.black
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Align(
-                              alignment: Alignment.bottomRight,
-                              child: Text('NumberOfItem : 4',
-                                style:
-                                TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 15.px
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        padding: EdgeInsets.all(2.px),
+                        itemBuilder: (context, index) => const ItemDetailsWidget(),
                         separatorBuilder: (context, index) => SizedBox(height: 1.h,),
                         itemCount: 9),
                   ),
@@ -662,66 +380,7 @@ class DetailsScreenContent extends StatelessWidget {
                       barrierDismissible: true,
                       context: context,
                       builder: (context) {
-                        return  Center(
-                          child: Container(
-                            margin: EdgeInsets.all(10.w),
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              borderRadius: BorderRadius.circular(20.px),
-                            ),
-                            child:  Container(
-                              height: 20.h,
-                              width: 40.w,
-                              color: Colors.transparent,
-                              child: PieChart(
-                                  PieChartData(
-                                    sections: [
-                                      PieChartSectionData(
-                                          color: Colors.red,
-                                          title: 'A',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 40,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 3
-                                      ),
-                                      PieChartSectionData(
-                                          color: Colors.blue,
-                                          title: 'B',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 50,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 6
-                                      ),
-                                      PieChartSectionData(
-                                          color: Colors.greenAccent,
-                                          title: 'C',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 60,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 10
-                                      ),
-                                    ],
-                                    sectionsSpace: 10,
-                                    centerSpaceColor: Colors.cyan.shade200,
-                                    centerSpaceRadius: 90,
-                                  )
-                              ),
-                            ).animate().slideY(begin: -1,end: 0,duration: 600.ms).fadeIn(duration: 1000.ms,),
-                          ),
-                        );
+                        return const PieChartWidget();
                       },);
                   },
                   child: Container(
@@ -774,65 +433,8 @@ class DetailsScreenContent extends StatelessWidget {
                     ),
                     width: double.infinity,
                     child: ListView.separated(
-                        padding: EdgeInsets.all(8.px),
-                        itemBuilder: (context, index) => Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                CircleAvatar(
-                                  backgroundColor: Colors.redAccent,
-                                  minRadius: 25.px,
-                                  maxRadius: 30.px,
-                                ),
-                                SizedBox(width: 2.w,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text('Full name',
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18.px,
-                                          fontWeight: FontWeight.w800
-                                      ),
-                                    ),
-                                    SizedBox(height: 0.5.h,),
-                                    Text('Estimated Time: 5 min',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13.px,
-                                          fontWeight: FontWeight.w800
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const Spacer(),
-                                Text('To:- Carlos Darras',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w800,
-                                      fontSize: 15.px,
-                                      color: Colors.black
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Align(
-                              alignment: Alignment.bottomRight,
-                              child: Text('NumberOfItem : 4',
-                                style:
-                                TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 15.px
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        padding: EdgeInsets.all(2.px),
+                        itemBuilder: (context, index) => const ItemDetailsWidget(),
                         separatorBuilder: (context, index) => SizedBox(height: 1.h,),
                         itemCount: 9),
                   ),
@@ -844,66 +446,7 @@ class DetailsScreenContent extends StatelessWidget {
                       barrierDismissible: true,
                       context: context,
                       builder: (context) {
-                        return  Center(
-                          child: Container(
-                            margin: EdgeInsets.all(10.w),
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              borderRadius: BorderRadius.circular(20.px),
-                            ),
-                            child:  Container(
-                              height: 20.h,
-                              width: 40.w,
-                              color: Colors.transparent,
-                              child: PieChart(
-                                  PieChartData(
-                                    sections: [
-                                      PieChartSectionData(
-                                          color: Colors.red,
-                                          title: 'A',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 40,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 3
-                                      ),
-                                      PieChartSectionData(
-                                          color: Colors.blue,
-                                          title: 'B',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 50,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 6
-                                      ),
-                                      PieChartSectionData(
-                                          color: Colors.greenAccent,
-                                          title: 'C',
-                                          titleStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20.px
-                                          ),
-                                          radius: 60,
-                                          titlePositionPercentageOffset: 0.3,
-                                          value: 10
-                                      ),
-                                    ],
-                                    sectionsSpace: 10,
-                                    centerSpaceColor: Colors.cyan.shade200,
-                                    centerSpaceRadius: 90,
-                                  )
-                              ),
-                            ).animate().slideY(begin: -1,end: 0,duration: 600.ms).fadeIn(duration: 1000.ms,),
-                          ),
-                        );
+                        return const PieChartWidget();
                       },);
                   },
                   child: Container(
