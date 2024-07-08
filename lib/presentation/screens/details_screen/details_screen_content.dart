@@ -43,7 +43,7 @@ class DetailsScreenContent extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.px),
-                    color: Colors.cyanAccent.shade400,
+                    color: Colors.white12,
                   ),
                   width: double.infinity,
                   child: ListView.separated(
