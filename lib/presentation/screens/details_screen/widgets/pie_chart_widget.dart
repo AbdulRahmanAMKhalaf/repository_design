@@ -65,7 +65,7 @@ class PieChartWidget extends StatelessWidget {
                 centerSpaceRadius: 90,
               )
           ),
-        ).animate().slideY(begin: -1,end: 0,duration: 600.ms).fadeIn(duration: 1000.ms,),
+        ).animate().slideY(begin: -1.5,end: 0,duration: 600.ms).flipV(duration: 900.ms,end: 0,begin: -1.5,).fadeIn(duration: 1000.ms,),
       ),
     );
   }

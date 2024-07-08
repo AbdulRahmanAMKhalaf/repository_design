@@ -18,7 +18,7 @@ class AnalysisWidget extends StatelessWidget {
           },);
       },
       child: Container(
-        height: 6.h,
+        height: 5.h,
         decoration: BoxDecoration(
             color: Colors.black,
             borderRadius: BorderRadius.circular(20.px)
@@ -30,7 +30,7 @@ class AnalysisWidget extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.cyanAccent.shade400,
-                fontSize: 20.px,
+                fontSize: 15.px,
                 fontWeight: FontWeight.w600,
               ),
             ),
