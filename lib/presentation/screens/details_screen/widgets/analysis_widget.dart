@@ -29,7 +29,7 @@ class AnalysisWidget extends StatelessWidget {
             child: Text('Analysis',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.cyanAccent.shade400,
+                color: Colors.white,
                 fontSize: 15.px,
                 fontWeight: FontWeight.w600,
               ),

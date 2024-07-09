@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:repository_design/presentation/screens/details_screen/widgets/date_and_percentage_widget.dart';
 import 'package:repository_design/presentation/screens/details_screen/widgets/destination_widget.dart';
-import 'package:repository_design/presentation/screens/details_screen/widgets/history_widget.dart';
 import 'package:repository_design/presentation/screens/details_screen/widgets/identify_item.dart';
 import 'package:repository_design/presentation/screens/details_screen/widgets/order_and_item_widget.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class ItemDetailsWidget extends StatelessWidget {
-  const ItemDetailsWidget({super.key});
+class UnderConstractionItemDetailsWidget extends StatelessWidget {
+  const UnderConstractionItemDetailsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +21,14 @@ class ItemDetailsWidget extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              CircleAvatar(
-                minRadius: 25.px,
-                maxRadius: 30.px,
-                backgroundColor: Colors.red,
+              Container(
+                height: 10.h,
+                width: 20.w,
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(15.px)
+                ),
               )
                   .animate(
                     onPlay: (controller) => controller.repeat(),
@@ -53,7 +56,7 @@ class ItemDetailsWidget extends StatelessWidget {
           collapsedIconColor: Colors.cyanAccent.shade700,
           collapsedShape: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.px),
-              borderSide: BorderSide(width: 1.w, color: Colors.black)),
+              borderSide: BorderSide(width: 1.w, color: Colors.cyanAccent.shade700)),
           iconColor: Colors.red,
           children: [
             Column(
@@ -64,7 +67,6 @@ class ItemDetailsWidget extends StatelessWidget {
                   height: 1.h,
                 ),
                 const DestinationWidget(),
-                const HistoryWidget(),
               ],
             ),
           ],

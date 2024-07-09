@@ -23,7 +23,7 @@ class IdentifyItem extends StatelessWidget {
             height: 0.5.h,
           ),
           Text(
-            'Client Name:\n  AbdulRahman Ayman',
+            'Client Name:\nAbdulRahman Ayman',
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
