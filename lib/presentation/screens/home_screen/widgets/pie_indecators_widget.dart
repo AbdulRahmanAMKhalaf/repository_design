@@ -5,7 +5,6 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 class PieIndecatorsWidget extends StatelessWidget {
   const PieIndecatorsWidget({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,27 +17,27 @@ class PieIndecatorsWidget extends StatelessWidget {
             PieChartSectionData(
                 value: 10,
                 radius: 100,
-                borderSide: const BorderSide(width: 3,color: Colors.black),
+                borderSide: BorderSide.none,
                 color: Colors.greenAccent,
                 title: 'Earnings',
                 titlePositionPercentageOffset: 0.4,
                 titleStyle: TextStyle(
                     color: Colors.black87,
-                    fontSize: 20.px,
-                    fontWeight: FontWeight.w800
+                    fontSize: 18.px,
+                    fontWeight: FontWeight.w900
                 )
             ),
             PieChartSectionData(
                 value: 3,
                 radius: 95,
-                borderSide: const BorderSide(width: 3,color: Colors.black),
+                borderSide: BorderSide.none,
                 color: Colors.redAccent,
                 titlePositionPercentageOffset: 0.4,
                 title: 'Spendings',
                 titleStyle: TextStyle(
                     color: Colors.black87,
-                    fontSize: 20.px,
-                    fontWeight: FontWeight.w800
+                    fontSize: 18.px,
+                    fontWeight: FontWeight.w900
                 )
             ),
           ],

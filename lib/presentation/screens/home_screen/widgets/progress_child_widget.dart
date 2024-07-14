@@ -107,7 +107,7 @@ class ProgressChildWidget extends StatelessWidget {
                 ),
               ),
             ),
-          ).animate(onPlay: (controller) => controller.repeat(reverse: true),).shimmer(color: Colors.white,duration: 1000.ms,curve: Curves.easeInOut),
+          ).animate(onPlay: (controller) => controller.repeat(reverse: false),).shimmer(duration: 1000.ms,curve: Curves.easeInOut),
         ],
       ),
     );
